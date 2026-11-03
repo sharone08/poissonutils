@@ -1,0 +1,12 @@
+Package: poissonutils
+Title: Universal Tools for the Poisson Distribution
+Version: 0.0.1
+Authors@R: 
+    person("Sharone", "Ndomtchi", , "sharonevanelle@gmail.com", role = c("aut", "cre"))
+Description: A universal package to fit the Poisson distribution on
+    collected real-world data, calculate probabilities, and plot
+    goodness-of-fit charts.
+License: GPL-3
+Config/roxygen2/version: 8.1.1
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)

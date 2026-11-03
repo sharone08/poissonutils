@@ -1,0 +1,6 @@
+library(datasets)
+library(help="datasets")
+data()
+A<-c(NA,3)
+mean(A)
+mean(c(NA,3))
