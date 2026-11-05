@@ -12,3 +12,6 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Imports: 
     ggplot2
+Depends: 
+    R (>= 3.5)
+LazyData: true
