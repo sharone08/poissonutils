@@ -1,0 +1,21 @@
+Package: poissonutils
+Type: Package
+Title: Poisson Distribution Tools for Count Data
+Version: 0.1.0
+Authors@R: 
+    person("Sharone Vanelle", "Ndomtchi", email = "sharonevanelle@gmail.com", role = c("aut", "cre"))
+Description: Reusable tools to work with count data under the Poisson
+    model: simple probabilities, estimation of the rate with an exact
+    confidence interval, goodness-of-fit test, aggregation by period,
+    ranking of risky zones, Poisson regression with exposure,
+    overdispersion diagnostics, prediction, plotting, alerts and export.
+    All functions work on any data.frame: the user supplies column names.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: ggplot2, rlang, stats, tools, utils
+Suggests: readxl, testthat (>= 3.0.0), writexl
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+LazyData: true
+Config/roxygen2/version: 8.1.1

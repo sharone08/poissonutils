@@ -1,0 +1,442 @@
+# POISSONUTILS
+## Modélisation et analyse prédictive des accidents routiers sur l'axe Douala–Yaoundé à l'aide de la loi de Poisson
+
+---
+
+# SLIDE 1 — PAGE DE COUVERTURE
+
+### Objectif
+Présenter le projet et donner une première impression professionnelle.
+
+### Contenu
+- Nom du package : POISSONUTILS.
+- Titre : Modélisation et analyse prédictive des accidents routiers sur l'axe Douala–Yaoundé à l'aide de la loi de Poisson.
+- Sous-titre : Développement d'un package statistique avec R.
+- Nom du présentateur.
+- Nom de l'encadreur.
+- Année académique : 2026–2027.
+
+### Présentation visuelle
+- Photographie d'une autoroute.
+- Fond bleu nuit.
+- Titre blanc.
+- Accents turquoise.
+- Mise en page asymétrique et moderne.
+
+---
+
+# SLIDE 2 — CONTEXTE ET JUSTIFICATION
+
+### Objectif
+Expliquer pourquoi les accidents routiers sur l'axe Douala–Yaoundé constituent un domaine d'application pertinent.
+
+### Contenu
+
+**1. Un axe routier stratégique**
+- Liaison entre Douala et Yaoundé.
+- Transport des personnes.
+- Circulation des marchandises.
+
+**2. Un enjeu de sécurité routière**
+- Les accidents constituent une préoccupation importante.
+- Leur fréquence peut varier selon les périodes et les zones.
+- L'identification des zones à risque est essentielle.
+
+**3. Un besoin d'analyse statistique**
+- Mesurer la fréquence des accidents.
+- Comparer les différents tronçons.
+- Anticiper les périodes nécessitant une vigilance renforcée.
+
+### Message clé
+« La prévention des accidents nécessite une meilleure exploitation des données statistiques. »
+
+### Présentation visuelle
+Trois colonnes illustrant les trois dimensions du contexte.
+
+---
+
+# SLIDE 3 — PROBLÉMATIQUE
+
+### Objectif
+Présenter les difficultés auxquelles le projet souhaite apporter une réponse.
+
+### Contenu
+
+**1. Exploitation des données**
+- Données parfois dispersées.
+- Difficulté à organiser les observations.
+- Nécessité de structurer les informations.
+
+**2. Analyse des risques**
+- Difficulté à comparer les fréquences entre tronçons.
+- Identification des zones nécessitant une attention particulière.
+- Prise en compte des variations temporelles.
+
+**3. Anticipation**
+- Estimation du nombre potentiel d'accidents futurs.
+- Besoin d'une approche probabiliste.
+- Nécessité d'aider à la prise de décision.
+
+### Question centrale
+
+« Comment utiliser la loi de Poisson pour modéliser la fréquence des accidents et contribuer à l'identification des tronçons et périodes à risque sur l'axe Douala–Yaoundé ? »
+
+### Présentation visuelle
+Trois difficultés illustrées par des icônes, suivies d'une question centrale mise en évidence.
+
+---
+
+# SLIDE 4 — OBJECTIFS DU PROJET
+
+### Objectif
+Présenter les résultats que le développement du package cherche à atteindre.
+
+### Objectif général
+
+Développer un package statistique sous R, fondé sur la loi de Poisson, permettant d'analyser, de modéliser et de prédire la fréquence des accidents routiers, avec une application à l'axe Douala–Yaoundé, afin de contribuer à l'identification des périodes et des tronçons à risque.
+
+### Objectifs spécifiques
+
+1. **Calculer :** les probabilités d'occurrence d'un nombre donné d'accidents.
+2. **Analyser :** les fréquences selon les périodes et les tronçons.
+3. **Modéliser :** les facteurs associés à la fréquence des accidents.
+4. **Prédire :** le nombre potentiel d'accidents futurs.
+5. **Aider à décider :** produire des indicateurs utiles à la prévention.
+
+### Présentation visuelle
+Infographie radiale : objectif général dans un cercle central, objectifs spécifiques disposés autour ou sur le côté.
+
+---
+
+# SLIDE 5 — FONDEMENTS MATHÉMATIQUES : LA LOI DE POISSON
+
+### Objectif
+Expliquer la méthode statistique utilisée dans le package.
+
+### Contenu
+
+**Définition**
+
+La loi de Poisson est une loi de probabilité discrète permettant de modéliser le nombre d'événements survenant pendant un intervalle de temps ou dans une zone donnée, sous certaines hypothèses.
+
+**Formule fondamentale**
+
+P(X = k) = (e^(-λ) × λ^k) / k!
+
+**Signification des paramètres**
+- X : nombre d'accidents observés.
+- k : nombre d'accidents recherché.
+- λ : nombre moyen d'accidents attendu.
+- e : constante mathématique, environ 2,718.
+
+**Propriétés**
+- Espérance : E(X) = λ.
+- Variance : V(X) = λ.
+
+**Exemple illustratif**
+
+Pour λ = 2, quelle est la probabilité d'observer exactement 3 accidents ?
+
+P(X = 3) = (e^(-2) × 2³) / 3!
+
+Résultat : environ 18,04 %.
+
+*Cette valeur est illustrative et ne représente pas une observation réelle sur la N3.*
+
+### Présentation visuelle
+Grande formule mathématique au centre, définition à gauche et graphique de la distribution de Poisson à droite.
+
+---
+
+# SLIDE 6 — COMMENT LA LOI DE POISSON RÉPOND-ELLE AU PROBLÈME ?
+
+### Objectif
+Faire le lien entre la théorie mathématique et l'application aux accidents routiers.
+
+### Contenu
+
+**1. Mesurer la fréquence**
+- Calculer le nombre moyen d'accidents.
+- Étudier les fréquences par jour, semaine ou mois.
+
+**2. Calculer les probabilités**
+- Estimer la probabilité d'observer un nombre donné d'accidents.
+- Étudier les événements inhabituels.
+
+**3. Comparer les tronçons**
+- Comparer les fréquences observées.
+- Tenir compte de l'exposition au risque lorsque les données de trafic sont disponibles.
+
+**4. Modéliser et prédire**
+- Étudier l'influence de variables explicatives.
+- Estimer les nombres d'accidents attendus.
+
+### Présentation visuelle
+Un parcours illustré :
+
+DONNÉES → FRÉQUENCES → PROBABILITÉS → MODÉLISATION → PRÉDICTION.
+
+---
+
+# SLIDE 7 — PRÉSENTATION DE LA SOLUTION : ACCIDENTPOISSON
+
+### Objectif
+Présenter le produit informatique développé et ses principales fonctionnalités.
+
+### Contenu
+
+**ACCIDENTPOISSON est un package R destiné à faciliter l'analyse statistique des données d'accidents routiers.**
+
+Ses fonctionnalités principales :
+
+1. Importation et préparation des données.
+2. Calcul des probabilités de Poisson.
+3. Agrégation des accidents par période et par zone.
+4. Analyse et comparaison des tronçons.
+5. Ajustement de modèles de régression de Poisson.
+6. Prédiction des nombres d'accidents attendus.
+7. Diagnostic de surdispersion.
+8. Génération de visualisations et de rapports.
+
+### Présentation visuelle
+Une représentation de type interface logicielle avec le nom du package, des icônes et quelques exemples de commandes R.
+
+---
+
+# SLIDE 8 — ARCHITECTURE ET FONCTIONNEMENT DU PACKAGE
+
+### Objectif
+Expliquer comment le package transforme les données brutes en résultats statistiques.
+
+### Contenu
+
+**Étape 1 : Importation**
+- Chargement du jeu de données.
+- Identification des variables nécessaires.
+
+**Étape 2 : Prétraitement**
+- Vérification des données.
+- Gestion des valeurs manquantes.
+- Organisation des observations.
+
+**Étape 3 : Analyse statistique**
+- Calcul des fréquences.
+- Calcul des probabilités.
+- Analyse temporelle et géographique.
+
+**Étape 4 : Modélisation**
+- Ajustement du modèle de Poisson.
+- Évaluation des hypothèses.
+- Diagnostic de surdispersion.
+
+**Étape 5 : Restitution**
+- Prédictions.
+- Visualisations.
+- Indicateurs et alertes statistiques.
+
+### Présentation visuelle
+Un diagramme de flux horizontal avec des flèches et des icônes représentant chaque étape.
+
+---
+
+# SLIDE 9 — DONNÉES ET VARIABLES UTILISÉES
+
+### Objectif
+Présenter les informations nécessaires au fonctionnement du package et à son application.
+
+### Contenu
+
+**Variables temporelles**
+- Date de l'accident.
+- Heure.
+- Jour de la semaine.
+- Mois et année.
+
+**Variables géographiques**
+- Tronçon routier.
+- Point kilométrique (PK).
+- Localisation.
+
+**Variables descriptives**
+- Type d'accident.
+- Cause présumée.
+- Type de véhicule.
+- Gravité.
+- Nombre de victimes.
+
+**Variables contextuelles**
+- Conditions météorologiques.
+- État de la chaussée.
+- Vitesse.
+- Volume de trafic, lorsqu'il est disponible.
+
+**Structure statistique**
+
+Pour modéliser les comptages, les données individuelles peuvent être agrégées : une ligne représente alors une période et une zone, avec le nombre d'accidents observés.
+
+### Présentation visuelle
+Un tableau stylisé présentant les variables et leurs rôles, accompagné d'une illustration de données tabulaires.
+
+---
+
+# SLIDE 10 — APPLICATION AU CAS DE LA NATIONALE N°3
+
+### Objectif
+Montrer comment le package peut être utilisé concrètement sur l'axe Douala–Yaoundé.
+
+### Contenu
+
+**Découpage géographique illustratif**
+
+L'axe peut être divisé en plusieurs tronçons pour faciliter l'analyse.
+
+Exemples de segments :
+- Douala–Dibamba.
+- Dibamba–Edéa.
+- Edéa–Pouma.
+- Pouma–Makak.
+- Makak–Mbankomo.
+- Mbankomo–Yaoundé.
+
+**Analyses possibles**
+- Nombre d'accidents par tronçon.
+- Fréquence des accidents par mois.
+- Comparaison des périodes.
+- Identification des tronçons présentant des fréquences élevées.
+
+**Important**
+
+Les limites géographiques et les comptages devront être confirmés à partir de données documentées.
+
+### Présentation visuelle
+Carte schématique de l'axe Douala–Yaoundé avec les tronçons identifiés et un graphique comparatif.
+
+---
+
+# SLIDE 11 — PRÉDICTION ET SYSTÈME D'ALERTE
+
+### Objectif
+Montrer comment les résultats statistiques peuvent contribuer à la surveillance de la sécurité routière.
+
+### Contenu
+
+**Prédiction**
+- Estimation du nombre d'accidents attendus.
+- Projection sur une période future.
+- Comparaison des valeurs prédites et observées.
+
+**Surveillance statistique**
+- Détection de fréquences inhabituelles.
+- Identification des périodes nécessitant une investigation.
+- Suivi des évolutions dans le temps.
+
+**Niveaux de vigilance proposés**
+- Surveillance habituelle.
+- Vigilance renforcée.
+- Investigation prioritaire.
+
+Les seuils d'alerte devront être déterminés et validés à partir des données et des critères statistiques retenus.
+
+### Présentation visuelle
+Un tableau de bord statistique avec indicateurs, courbe de prédiction et niveaux de vigilance.
+
+---
+
+# SLIDE 12 — RÉSULTATS ATTENDUS ET IMPACT
+
+### Objectif
+Présenter la valeur ajoutée du package et les bénéfices attendus.
+
+### Contenu
+
+**Sur le plan technique**
+- Automatisation des analyses statistiques.
+- Réutilisation des fonctions sur différents jeux de données.
+- Simplification de la modélisation des comptages.
+
+**Sur le plan analytique**
+- Meilleure compréhension des fréquences d'accidents.
+- Comparaison des périodes et des zones.
+- Identification des variations inhabituelles.
+
+**Sur le plan opérationnel**
+- Production d'indicateurs exploitables.
+- Appui à la surveillance des tronçons.
+- Contribution à la planification des actions de prévention.
+
+### Présentation visuelle
+Trois grandes dimensions illustrées : technique, analytique et opérationnelle, avec des indicateurs visuels.
+
+---
+
+# SLIDE 13 — CONCLUSION ET PERSPECTIVES
+
+### Objectif
+Terminer la présentation en rappelant l'intérêt du projet et ses perspectives d'évolution.
+
+### Conclusion
+
+AccidentPoisson vise à mettre la statistique au service de la sécurité routière grâce au développement d'un outil d'analyse fondé sur la loi de Poisson.
+
+Le package permettra de structurer les analyses, d'étudier les fréquences d'accidents, de construire des modèles statistiques et d'estimer les nombres d'accidents attendus.
+
+### Perspectives
+
+- Enrichir le package avec de nouvelles méthodes statistiques.
+- Intégrer des données réelles et actualisées.
+- Développer une interface graphique.
+- Ajouter des cartes interactives.
+- Explorer des modèles alternatifs lorsque les hypothèses de Poisson ne sont pas satisfaites.
+
+### Phrase de clôture
+
+« Comprendre les accidents d'aujourd'hui pour mieux prévenir ceux de demain. »
+
+### Présentation visuelle
+Une photographie d'autoroute en arrière-plan, une grande phrase de clôture et le nom ACCIDENTPOISSON.
+
+---
+
+# IDENTITÉ VISUELLE GLOBALE
+
+### Palette de couleurs
+
+| Couleur | Code hexadécimal | Utilisation |
+|---|---|---|
+| Bleu nuit | #10243A | Arrière-plan |
+| Bleu pétrole | #164E63 | Éléments secondaires |
+| Turquoise | #14B8A6 | Accents et éléments importants |
+| Blanc | #FFFFFF | Titres et textes |
+| Gris clair | #E5E7EB | Textes secondaires |
+| Orange | #F59E0B | Alertes et points d'attention |
+
+### Typographie
+- Titres : Arial Bold ou Aptos Display.
+- Textes : Arial ou Aptos.
+- Formules : éditeur d'équations PowerPoint.
+
+### Principes de conception
+- Format 16:9.
+- Fond bleu nuit dominant.
+- Contraste élevé.
+- Peu de texte par diapositive.
+- Illustrations et graphiques plutôt que des paragraphes longs.
+- Variation des compositions visuelles.
+- Animations sobres.
+- Cohérence graphique sur l'ensemble de la présentation.
+
+---
+
+# POINTS MÉTHODOLOGIQUES À RESPECTER
+
+1. Distinguer les données réelles des données simulées.
+2. Ne pas présenter les exemples numériques comme des résultats observés sur la N3.
+3. Vérifier les hypothèses de la loi de Poisson.
+4. Diagnostiquer la surdispersion et envisager un modèle alternatif si nécessaire.
+5. Distinguer le nombre d'accidents du taux d'accidents : tenir compte de l'exposition au trafic pour comparer correctement les tronçons.
+6. Présenter les prédictions comme des estimations statistiques, et non comme des certitudes.
+7. Concevoir le package pour qu'il puisse fonctionner avec différents jeux de données et différentes appellations de colonnes.
+
+**Fil conducteur de la présentation :**
+
+CONTEXTE → PROBLÉMATIQUE → OBJECTIFS → THÉORIE → SOLUTION → FONCTIONNEMENT → APPLICATION → PRÉDICTION → IMPACT → PERSPECTIVES.
